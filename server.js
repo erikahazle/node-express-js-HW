@@ -28,7 +28,7 @@ var foods =[
 // root path
 app.get("/", function (req, res){
   // render index.html
-  res.sendFile(path.join(__dirname + '/public/views/index.html'));
+  res.sendFile(path.join(__dirname + '/public/views/home.html'));
 });
  
 // foods index path
@@ -40,7 +40,7 @@ app.get("/foods", function (req, res){
 app.post("/foods", function (req, res){
   var newFood = req.body;
   //add a unique id
-  newFood.id = foods[foods.length - 1].id + 1;
+  // newFood.id = foods[foods.length - 1].id + 1;
   // add new food to DB (array, really...)
   foods.push(newFood);
   // send a response with newly created object
